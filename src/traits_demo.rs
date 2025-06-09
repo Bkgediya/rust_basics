@@ -16,7 +16,10 @@ pub trait Summary {
     fn summarize(&self) -> String;
 }
 
-
+// traits as parameters
+pub fn notify(item: &impl Summary) {
+    println!("{}", item.summarize());
+}
 
 pub fn run() {
     let user = User {
@@ -25,5 +28,7 @@ pub fn run() {
     };
 
     println!("{}", user.summarize());
+
+    notify(&user);
     println!("Hello from trait");
 }
