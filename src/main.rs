@@ -2,6 +2,7 @@ use std::{collections::HashMap, fs::read_to_string};
 use chrono::{ Utc };
 mod iterators;
 mod generics;
+mod lifetime_demo;
 enum Shape {
     Circle(f64),
     Square(f64),
@@ -33,6 +34,7 @@ fn vector_with_event(vec : &Vec<i32>) -> Vec<i32>{
 }
 
 fn main() {
+    lifetime_demo::run();
     generics::run();
     iterators::run();
 
